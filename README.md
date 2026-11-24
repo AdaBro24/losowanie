@@ -23,3 +23,9 @@ Następnie otwórz `http://localhost:8000`. Losowanie korzysta z Web Crypto; do 
 Wyniki są przechowywane w części `#santa=...` wspólnego linku, a nie na serwerze ani w `localStorage`. Ponowne otwarcie tego linku zachowuje to samo losowanie. Z tego powodu nie da się unieważnić ani zmienić wyników po udostępnieniu linku — do nowego losowania utwórz nowy link.
 
 **Każda osoba mająca link może technicznie odczytać komplet wyników.** Interfejs pokazuje uczestnikowi tylko jego wynik, ale wspólny link nie zapewnia poufności wobec jego odbiorców. Nie przesyłaj go poza grupę uczestników. Unikalne imiona są wymagane; użyj pełnych imion lub innych niepowtarzających się nazw w rodzinie.
+
+## Wykluczenia i potwierdzenia
+
+Przy tworzeniu losowania można dodać zakazy jednostronne lub wzajemne. Aplikacja sprawdza, czy da się przydzielić wszystkim różne osoby bez naruszenia zakazów; jeśli nie, poprosi o zmianę wykluczeń.
+
+Po losowaniu otwiera się panel organizatora. Zaznaczaj w nim osoby, które potwierdziły odkrycie wyniku. Lista jest zapisywana lokalnie w przeglądarce organizatora i można ją otworzyć ponownie z adresu panelu (parametr `?organizer=1`). Uczestnicy muszą potwierdzić to organizatorowi — bez backendu lista nie aktualizuje się sama między urządzeniami.
